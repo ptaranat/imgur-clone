@@ -23,6 +23,9 @@
         <li class="nav-item">
           <router-link class="nav-link" to="login">Login</router-link>
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="register">Register</router-link>
+        </li>
       </ul>
       <span class="navbar-text">@ptaranat</span>
     </div>
