@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Image Repo</a>
+    <a class="navbar-brand" href="#">Imgur Clone</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,16 +15,16 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">
+          <router-link class="nav-link" to="/">
             Home
             <span class="sr-only">(current)</span>
-          </a>
+          </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <router-link class="nav-link" to="login">Login</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <router-link class="nav-link" to="register">Register</router-link>
         </li>
       </ul>
       <span class="navbar-text">@ptaranat</span>
