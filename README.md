@@ -20,3 +20,8 @@ Set up AWS access keys (Account->My Security Credentials)
 # Serverless
 
 This will be done on a new branch.
+`sls deploy`
+
+- S3 ETag must be wrapped in " quotes
+- list_objects_v2 returns `Content[{"LastModified":datetime.datetime}]` and datetime is not serializable
+- To fix, dump json with `default=str` so that datetime is resolved first
