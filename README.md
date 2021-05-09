@@ -13,8 +13,8 @@ This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazo
   - [x] Serverless deploy Lambda functions
   - [ ] Unit test Vue frontend
   - [ ] Provision using Terraform
-- [ ] Populate home page with latest images from S3 bucket
-  - Still WIP, should use DynamoDB
+- [x] Populate home page with latest images from S3 bucket
+  - Still WIP, should use DynamoDB to separate key, location, labels
 - [ ] Access control for private/public images
 - [ ] Secure deletion of images
   - This should use Cognito Auth to delete images from DB if the user owns that image
