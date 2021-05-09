@@ -1,11 +1,10 @@
 <template>
-  <div class="login-box">
-    <h4>Register</h4>
-    <hr />
-    <div class="alert alert-warning" v-if="error != null">
+  <div class="login-box center-align">
+    <h4>Confirm Signup</h4>
+    <div class="card-panel red darken-2" v-if="error != null">
       <span class="white-text">{{ error.message }}</span>
     </div>
-    <p>Don't have an account? Register for one now</p>
+    <p>Enter the verification code you should have recieved via email</p>
     <form class="form-group">
       <div class="input-field">
         <label for="username">Username</label>
@@ -18,35 +17,20 @@
         />
       </div>
       <div class="input-field">
-        <label for="email">Email</label>
+        <label for="confirmcode">Confirmation Code</label>
         <input
-          id="email"
+          id="confirmcode"
           type="text"
           class="form-control"
-          v-model="email"
-          required
-        />
-      </div>
-      <div class="input-field">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          v-model="pass"
+          v-model="confirmcode"
           required
         />
       </div>
       <div class="center-align">
-        <hr />
-        <button v-on:click="authenticate()" class="btn btn-danger btn-large">
-          Register
+        <br />
+        <button v-on:click="confirm()" class="btn btn-danger btn-large">
+          Verify Now
         </button>
-        <hr />
-        <p>
-          Already have an account? -
-          <router-link to="Login">Login Now</router-link>
-        </p>
       </div>
     </form>
   </div>
@@ -54,33 +38,32 @@
 
 <script>
 export default {
-  name: "Register",
+  name: "Confirm",
   data() {
     return {
       username: "",
-      email: "",
-      pass: "",
+      confirmcode: "",
       error: null,
     };
   },
   methods: {
-    authenticate() {
+    confirm() {
       /*eslint no-unused-vars: "off"*/
-      this.$cognitoAuth.signup(
+      this.$cognitoAuth.confirmRegistration(
         this.username,
-        this.email,
-        this.pass,
+        this.confirmcode,
         (err, result) => {
           if (err) {
             this.error = err;
           } else {
-            this.$router.push({ path: "/confirm" });
+            this.$router.push("/profile");
           }
         }
       );
     },
   },
 };
+//confirmcode
 </script>
 
 <style scoped>
@@ -101,11 +84,18 @@ p {
   height: auto;
   color: #d1d2d2;
   background-color: #343a40;
-  margin-top: 60px;
   border-radius: 5px;
   padding: 40px;
   margin: auto;
   margin-top: 60px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+button {
+  margin: auto;
+  margin: 0;
+  padding: 0px 40px;
+}
+button i {
+  font-size: 18px;
 }
 </style>
