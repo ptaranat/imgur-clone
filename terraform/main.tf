@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-2"
 }
 
-resource "aws_s3_bucket" "image_repo_bucket" {
+resource "aws_s3_bucket" "bucket" {
   bucket = "dev-image-repo-bucket"
 
   cors_rule {
