@@ -1,31 +1,41 @@
 <template>
   <div>
-    <div class="container pt-4">
-      <div class="row">
-        <div v-for="image in latest" v-bind:key="image" class="col-lg-4">
-          <!-- <ImageCard :img="image" /> -->
-          <ImageCard
-            v-bind:img="
+    <b-container class="container pt-4">
+      <b-row>
+        <b-card-group
+          deck
+          v-for="(image, index) in latest"
+          :key="index"
+          class="col-lg-4"
+        >
+          <b-card
+            v-bind:title="image"
+            v-bind:img-src="
               'https://dev-image-repo-bucket.s3.us-east-2.amazonaws.com/' +
               image
             "
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
+            img-top
+            img-alt=""
+            bg-variant="dark"
+            text-variant="white"
+            class="image-card mb-4"
+          >
+            <b-card-text>asdf</b-card-text>
+            <b-card-text class="small text-muted"
+              >Last updated 3 mins ago</b-card-text
+            >
+          </b-card>
+        </b-card-group>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import ImageCard from "./ImageCard.vue";
 
 export default {
   name: "HomePage",
-  components: {
-    ImageCard,
-  },
   data() {
     return {
       latest: [],
@@ -47,6 +57,9 @@ export default {
 
 <style>
 body {
-  background-color: #1c1f22;
+  background-color: #1c1f22 !important;
+}
+.image-card {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
 }
 </style>
