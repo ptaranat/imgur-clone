@@ -20,7 +20,6 @@
             text-variant="white"
             class="image-card mb-4"
           >
-            <b-card-text>asdf</b-card-text>
             <b-card-text class="small text-muted"
               >Last updated 3 mins ago</b-card-text
             >
