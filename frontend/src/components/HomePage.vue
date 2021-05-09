@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container pt-4">
       <div class="row">
-        <div v-for="image in latest" v-bind:key="image" class="col-lg-3">
+        <div v-for="image in latest" v-bind:key="image" class="col-lg-4">
           <ImageCard :img="image" />
         </div>
       </div>
