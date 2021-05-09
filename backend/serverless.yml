@@ -39,3 +39,7 @@ functions:
           path: upload-node
           method: post
           cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-east-2:788105770206:userpool/us-east-2_PIH6DSP6A
+            identitySource: method.request.header.Authorization
+            type: token
