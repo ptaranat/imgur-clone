@@ -24,7 +24,7 @@ provider:
 
 functions:
   list:
-    handler: list_s3_objects.list
+    handler: list_s3_objects.list_obj
     events:
       - http:
           path: list

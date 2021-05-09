@@ -13,7 +13,7 @@ class DecimalEncoder(json.JSONEncoder):
         return super(DecimalEncoder, self).default(obj)
 
 
-def list(event, context):
+def list_obj(event, context):
     try:
         keys = []
         body = s3.list_objects_v2(Bucket=bucket)
