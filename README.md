@@ -1,27 +1,43 @@
 # shopify-challenge
 
-# Installation
+This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazonaws.com/](http://image-repo-frontend.s3-website.us-east-2.amazonaws.com/)
 
-`sudo npm install -g @vue/cli`  
-`sudo npm update -g @vue/cli`  
-`vue create frontend`  
-In /backend:  
-`npm install --save express`
+### Features
 
-# Terraform
+- [x] Account registration and login using Amazon Cognito
+- [x] Secure upload to S3 bucket when logged in
+  - Upload one or multiple images using drag and drop
+  - You can access the images at `https://dev-image-repo-bucket.s3.us-east-2.amazonaws.com/your-image-name.png`
+- [x] CI/CD using Github Actions [.github/workflows/build.yml](.github/workflows/build.yml)
+  - [x] Build, lint and deploy Vue frontend in S3 bucket
+  - [x] Serverless deploy Lambda functions
+  - [ ] Unit test Vue frontend
+  - [ ] Provision using Terraform
+- [ ] Populate home page with latest images from S3 bucket
+  - Still WIP, should use DynamoDB
+- [ ] Access control for private/public images
+- [ ] Secure deletion of images
+  - This should use Cognito Auth to delete images from DB if the user owns that image
+- [ ] Automatic tagging based on image features using Rekognition
 
-Install terraform from zip
-`tf init`  
-Git ignore the .terraform cache.  
-Set up AWS access keys (Account->My Security Credentials)
-`tf plan`  
-`tf apply`
+### Local Deployment
 
-# Serverless
+Install and update Vue
 
-This will be done on a new branch.
-`sls deploy`
+```
+sudo npm install -g @vue/cli
+sudo npm update -g @vue/cli
+```
 
-- S3 ETag must be wrapped in " quotes
-- list_objects_v2 returns `Content[{"LastModified":datetime.datetime}]` and datetime is not serializable
-- To fix, dump json with `default=str` so that datetime is resolved first
+Serve a local version of the frontend
+
+```
+cd ./frontend
+npm install
+npm run serve
+```
+
+### Resources
+
+- [Elliot Forbes's "Building an Imgur Clone with Vue.JS and Node.JS"](https://tutorialedge.net/projects/building-imgur-clone-vuejs-nodejs/)
+  - I have limited frontend experience so I followed most of this tutorial. Main difference is that I used Python for AWS Lambda functions instead of Node
