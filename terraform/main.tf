@@ -18,3 +18,31 @@ resource "aws_s3_bucket" "image_repo_bucket" {
     Environment = "Dev"
   }
 }
+
+resource "aws_cognito_user_pool" "image_repo_pool" {
+  name = "imagerepopool"
+
+  auto_verified_attributes = ["email"]
+
+  verification_message_template {
+    default_email_option = "CONFIRM_WITH_CODE"
+  }
+}
+
+resource "aws_cognito_user_pool_client" "client" {
+  name = "image-repo-app-client"
+
+  user_pool_id = aws_cognito_user_pool.image_repo_pool.id
+}
+
+output "UserPoolId" {
+  value = aws_cognito_user_pool.image_repo_pool.id
+}
+
+output "UserPoolArn" {
+  value = aws_cognito_user_pool.image_repo_pool.arn
+}
+
+output "ClientId" {
+  value = aws_cognito_user_pool_client.client.id
+}

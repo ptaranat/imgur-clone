@@ -30,3 +30,12 @@ functions:
           path: list
           method: get
           cors: true
+  uploadImage:
+    handler: get_signed_upload.request_upload_URL
+    environment:
+      BUCKET: ${self:custom.bucket}
+    events:
+      - http:
+          path: upload-node
+          method: post
+          cors: true
