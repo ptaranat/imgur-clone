@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>Home Page</h2>
     <div class="container">
       <div class="row">
         <div v-for="image in latest" v-bind:key="image" class="col-lg-3">
