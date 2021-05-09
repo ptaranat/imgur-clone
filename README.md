@@ -1,5 +1,12 @@
 # shopify-challenge
 
+![Build](https://github.com/ptaranat/shopify-challenge/actions/workflows/build.yml/badge.svg)
+![Deploy](https://github.com/ptaranat/shopify-challenge/actions/workflows/deployer.yml/badge.svg)
+![Vue](https://img.shields.io/badge/vue-2.6.12-green.svg)
+![Issues](https://img.shields.io/github/issues/ptaranat/shopify-challenge)
+![Size](https://img.shields.io/github/repo-size/ptaranat/shopify-challenge)
+![License](https://img.shields.io/github/license/ptaranat/shopify-challenge)
+
 This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazonaws.com/](http://image-repo-frontend.s3-website.us-east-2.amazonaws.com/)
 
 ### Features
