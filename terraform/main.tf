@@ -19,6 +19,32 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
+resource "aws_s3_bucket" "frontend_bucket" {
+  bucket = "image-repo-frontend"
+  policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Sid" : "PublicReadGetObject",
+        "Effect" : "Allow",
+        "Principal" : "*",
+        "Action" : "s3:GetObject",
+        "Resource" : "arn:aws:s3:::image-repo-frontend/*"
+      }
+    ]
+  })
+
+  website {
+    index_document = "index.html"
+    error_document = "index.html"
+  }
+
+  tags = {
+    Name        = "Dev Image Repo Frontend"
+    Environment = "Dev"
+  }
+}
+
 resource "aws_cognito_user_pool" "image_repo_pool" {
   name = "imagerepopool"
 
@@ -45,4 +71,12 @@ output "UserPoolArn" {
 
 output "ClientId" {
   value = aws_cognito_user_pool_client.client.id
+}
+
+output "frontend-bucket" {
+  value = aws_s3_bucket.frontend_bucket.bucket
+}
+
+output "app-path" {
+  value = aws_s3_bucket.frontend_bucket.website_endpoint
 }
