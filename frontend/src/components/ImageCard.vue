@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card bg-dark text-white mb-4">
     <img class="card-img-top" :src="img" alt="" />
     <div class="card-body">
       <h5 class="card-title">{{ img }}</h5>
