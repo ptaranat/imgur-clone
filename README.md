@@ -18,8 +18,8 @@ This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazo
 - [x] CI/CD using Github Actions [.github/workflows/build.yml](.github/workflows/build.yml)
   - [x] Build, lint and deploy Vue frontend in S3 bucket
   - [x] Serverless deploy Lambda functions
+  - [x] Provision using Terraform
   - [ ] Unit test Vue frontend
-  - [ ] Provision using Terraform
 - [x] Populate home page with latest images from S3 bucket
   - Still WIP, should use DynamoDB to separate key, location, labels
 - [ ] Access control for private/public images
