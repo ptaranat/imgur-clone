@@ -12,6 +12,7 @@ This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazo
 ### Features
 
 - [x] Account registration and login using Amazon Cognito
+  - If you would like to test it without your email, please use a service like [temp-mail.org](https://temp-mail.org/)
 - [x] Secure upload to S3 bucket when logged in
   - Upload one or multiple images using drag and drop
   - You can access the images at `https://dev-image-repo-bucket.s3.us-east-2.amazonaws.com/your-image-name.png`
