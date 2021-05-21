@@ -1,4 +1,4 @@
-# shopify-challenge
+# Imgur Clone
 
 ![Build](https://github.com/ptaranat/shopify-challenge/actions/workflows/build.yml/badge.svg)
 ![Deploy](https://github.com/ptaranat/shopify-challenge/actions/workflows/deployer.yml/badge.svg)
