@@ -9,11 +9,14 @@
   },
   "dependencies": {
     "amazon-cognito-identity-js": "^4.6.1",
+    "ansi-regex": ">=5.0.1",
     "aws-sdk": "^2.903.0",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "glob-parent": ">=5.1.2",
+    "set-value": ">=4.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.5.1",
     "vue2-dropzone": "^3.6.0"
