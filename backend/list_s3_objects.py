@@ -34,5 +34,5 @@ def list_obj(event, context):
             "headers": {"Access-Control-Allow-Origin": "*"},
             "body": json.dumps({"error": str(e)}),
         }
-    finally:
-        return response
+
+    return response
