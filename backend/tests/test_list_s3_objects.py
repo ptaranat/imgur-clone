@@ -7,5 +7,7 @@ def test_list_obj():
     event = ""
     context = ""
     result = list_obj(event, context)
-    assert result["statusCode"] == 200
-    assert isinstance(json.loads(result["body"]), list)
+    if result["statusCode"] != 200:
+        raise AssertionError
+    if not isinstance(json.loads(result["body"]), list):
+        raise AssertionError
