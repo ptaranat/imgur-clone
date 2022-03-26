@@ -30,19 +30,18 @@ This is currently live at [http://image-repo-frontend.s3-website.us-east-2.amazo
 
 ### Local Deployment
 
-Install and update Vue
+Install Vue CLI
 
 ```
-sudo npm install -g @vue/cli
-sudo npm update -g @vue/cli
+yarn global add @vue/cli
 ```
 
 Serve a local version of the frontend
 
 ```
 cd ./frontend
-npm install
-npm run serve
+yarn install
+yarn serve
 ```
 
 ### Resources
