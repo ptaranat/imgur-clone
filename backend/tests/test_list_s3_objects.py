@@ -1,4 +1,3 @@
-import pytest
 import json
 from backend.list_s3_objects import list_obj
 
